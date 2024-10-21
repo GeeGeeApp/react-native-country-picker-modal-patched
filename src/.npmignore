@@ -31,9 +31,5 @@ web-build/
 .prettierrc
 lib/assets/images/icon.png
 lib/assets/images/splash.png
-src/
-data/
-!src/assets/data/
-!lib/assets/data/countries-image.json
 App.tsx
 .expo-shared/assets.json
