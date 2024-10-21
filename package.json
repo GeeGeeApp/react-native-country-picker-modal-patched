@@ -8,11 +8,11 @@
     "url": "git+https://github.com/xcarpentier/react-native-country-picker-modal.git"
   },
   "scripts": {
-    "start": "yarn config:dev && expo start",
-    "start:web": "yarn config:dev && expo start -w --dev",
+    "start": "npm run config:dev && expo start",
+    "start:web": "npm run config:dev && expo start -w --dev",
     "tsc": "node_modules/.bin/tsc --noEmit",
-    "build": "rm -rf lib/ && node_modules/.bin/tsc && mkdir ./lib && cp -rf ./src/assets ./lib/assets && yarn minify",
-    "minify": "yarn minify:emoji",
+    "build": "rm -rf lib/ && node_modules/.bin/tsc && mkdir ./lib && cp -rf ./src/assets ./lib/assets && npm run minify",
+    "minify": "npm run minify:emoji",
     "minify:emoji": "./scripts/minify.js ./lib/assets/data/countries-emoji.json",
     "config:dev": "json -I -f package.json -e 'this.main=\"node_modules/expo/AppEntry.js\"'",
     "config:npm": "json -I -f package.json -e 'this.main=\"lib/index.js\"'",
@@ -23,12 +23,12 @@
     "data:cca2": "rm -rf ./data/cca2.json && ./scripts/transform-world-countries.js --cca2 > ./data/cca2.json",
     "data:regions": "rm -rf ./data/cca2.json && ./scripts/transform-world-countries.js --regions > ./data/regions.json",
     "data:subregions": "rm -rf ./data/cca2.json && ./scripts/transform-world-countries.js --subregions > ./data/subregions.json",
-    "cleaning": "rm -rf node_modules && rm -f yarn.lock && yarn cache clean && yarn install && watchman watch-del-all && rm -fr $TMPDIR/react-*",
-    "verify": "yarn lint && yarn build && yarn test",
-    "prepublishOnly": "yarn verify && yarn config:npm",
-    "postpublish": "yarn config:dev",
+    "cleaning": "rm -rf node_modules && rm -f package-json.lock && npm run cache clean && npm install && watchman watch-del-all && rm -fr $TMPDIR/react-*",
+    "verify": "npm run lint && npm run build && npm run test",
+    "prepublishOnly": "npm run verify && npm run config:npm",
+    "postpublish": "npm run config:dev",
     "deploy": "gh-pages -d web-build",
-    "predeploy": "yarn verify && expo build:web && mkdir web-build/countries && cp ./data/countries.json web-build/countries/index.json"
+    "predeploy": "npm run verify && expo build:web && mkdir web-build/countries && cp ./data/countries.json web-build/countries/index.json"
   },
   "keywords": [
     "react-native",
@@ -107,7 +107,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint && yarn tsc"
+      "pre-commit": "npm run lint && npm run tsc"
     }
   },
   "resolutions": {
