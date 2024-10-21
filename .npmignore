@@ -17,10 +17,6 @@ scripts
 babel.config.js
 metro.config.js
 scripts/
-src/
-data/
-!src/assets/data/
-App.tsx
 tsconfig.json
 tslint.json
 .editorconfig
@@ -32,7 +28,6 @@ __tests__/
 .github/
 .vscode/
 web-build/
-lib/assets/data/countries-image.json
 .prettierrc
 lib/assets/images/icon.png
 lib/assets/images/splash.png
